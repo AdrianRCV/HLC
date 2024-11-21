@@ -7,6 +7,7 @@ services:
       args:
        - CONTEXT=${CONTEXTO}
        - TZ=${TZ}
+       - PROYECTO=${PROYECTO}
     image: ${AUTOR}/ubuntubase 
     container_name: ${HOSTNAME}
     env_file:
@@ -17,3 +18,13 @@ services:
       - HOSTNAME=servidor1
     volumes:
       - ./logs:/root/logs
+    networks:
+      netcaronte:
+        ipv4_address: 172.102.10.6
+
+networks:
+  netcaronte:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.120.10.0/24
