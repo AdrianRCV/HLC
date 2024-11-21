@@ -1,4 +1,3 @@
-version: "3.8"
 services:
   servidor:
     build:
@@ -11,16 +10,16 @@ services:
     image: ${AUTOR}/ubuntubase 
     container_name: ${HOSTNAME}
     env_file:
-      -./.env
+      - ./.env
     environment:
       - USUARIO=${USUARIO}
       - PASSWORD=${PASSWD}
-      - HOSTNAME=servidor1
+      - HOSTNAME=${HOSTNAME}
     volumes:
       - ./logs:/root/logs
     networks:
       netcaronte:
-        ipv4_address: 172.102.10.6
+        ipv4_address: 172.120.10.6
 
 networks:
   netcaronte:

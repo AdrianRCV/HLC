@@ -1,11 +1,11 @@
 #!/bin/bash
 set -e
 
-source ./usuarios/usuarios.sh
-surce ./ssh/ssh.sh
+source /root/admin/usuarios/usuarios.sh
+source /root/admin/ssh/ssh.sh
 
 chmod +x /root/admin/usuarios/usuarios.sh
-chmod +x /
+chmod +x /root/admin/ssh/ssh.sh
 
 main(){
    newUser  
