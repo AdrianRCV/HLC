@@ -8,9 +8,9 @@ chmod +x /root/admin/usuarios/usuarios.sh
 chmod +x /root/admin/ssh/ssh.sh
 
 main(){
-   newUser  
+   newUser 
+   UserSudo 
    config_ssh
-   # make_bienvenida
 
     tail -f /dev/null 
 }

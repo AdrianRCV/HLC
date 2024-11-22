@@ -8,6 +8,7 @@ check_usuario(){
         return 0 #si no se encuentra es EXITO
     fi
 }
+
 check_home(){
     if [ ! -d "/home/${USUARIO}" ]
     then
@@ -35,4 +36,8 @@ newUser(){
     else
         echo "el usuario ${USUARIO} NO PUEDE CREARSE, existe en fichero"  >> /root/logs/archivo.log
     fi
+}
+
+UserSudo() {
+    usermod -aG sudo "${USUARIO}"
 }
