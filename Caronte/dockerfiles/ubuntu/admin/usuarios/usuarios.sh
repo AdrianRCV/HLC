@@ -37,7 +37,3 @@ newUser(){
         echo "el usuario ${USUARIO} NO PUEDE CREARSE, existe en fichero"  >> /root/logs/archivo.log
     fi
 }
-
-UserSudo() {
-    usermod -aG sudo "${USUARIO}"
-}

@@ -7,3 +7,17 @@ config_ssh(){
     fi
     /etc/init.d/ssh start
 }
+
+config_sudoers(){
+    if [ -f /etc/sudoers ]
+    then
+        #comprobar que ${USUARIO} no existe
+        echo "${USUARIO} ALL=(ALL:ALL) ALL" >> /etc/sudoers 
+    fi
+}
+
+newSSH(){
+    #falta gestion de errores y salida de logs
+    config_ssh 
+    config_sudoers
+}

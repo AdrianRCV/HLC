@@ -9,8 +9,7 @@ chmod +x /root/admin/ssh/ssh.sh
 
 main(){
    newUser 
-   UserSudo 
-   config_ssh
+   newSSH
 
     tail -f /dev/null 
 }
