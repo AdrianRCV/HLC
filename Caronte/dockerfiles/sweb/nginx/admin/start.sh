@@ -1,11 +1,18 @@
 #!/bin/bash
 set -e
 
+config_nginx(){
+    nginx &
+}
+
+load_entrypoint_base(){
+    /root/admin/start.sh
+}
 
 main(){
-    bash /root/admin/start.sh
 
-    nginx -g 'daemon off;'
+    config_nginx
+    load_entrypoint_base
 
     tail -f /dev/null 
 }
